@@ -1,0 +1,145 @@
+! Sanitized for public publication (no secrets, keys, or certificates)
+
+Building configuration...
+
+Current configuration : 3887 bytes
+!
+!
+version 17.16
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname R3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no logging console
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+login on-success log
+ipv6 unicast-routing
+ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 192.168.3.1 255.255.255.0
+ ipv6 address FE80::3:2 link-local
+ ipv6 address 2001:DB8:ACAD:3000::1/64
+!
+interface Ethernet0/0
+ no ip address
+ shutdown
+!
+interface Ethernet0/1
+ ip address 10.1.3.2 255.255.255.0
+ ipv6 address FE80::3:1 link-local
+ ipv6 address 2001:DB8:ACAD:1013::2/64
+!
+interface Ethernet0/2
+ no ip address
+ shutdown
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+!
+interface Serial1/0
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+interface Serial1/1
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+interface Serial1/2
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+interface Serial1/3
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+!
+ip route 0.0.0.0 0.0.0.0 Ethernet0/1 10.1.3.1
+ipv6 route ::/0 Ethernet0/1 2001:DB8:ACAD:1013::1
+!
+!
+!
+control-plane
+!
+!
+banner motd ^C R3, Implement VRF-Lite ^C
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ privilege level 15
+ password 
+ logging synchronous
+ login
+ transport input ssh
+!
+!
+!
+!
+end

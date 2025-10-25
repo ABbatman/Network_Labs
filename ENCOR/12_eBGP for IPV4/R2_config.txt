@@ -1,0 +1,127 @@
+! Sanitized for public publication (no secrets, keys, or certificates)
+
+Building configuration...
+
+Current configuration : 3637 bytes
+!
+!
+!
+version 17.16
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no logging console
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+login on-success log
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 192.168.2.1 255.255.255.224
+!
+interface Loopback1
+ ip address 192.168.2.65 255.255.255.192
+!
+interface Ethernet0/0
+ ip address 10.1.2.2 255.255.255.0
+!
+interface Ethernet0/1
+ ip address 10.2.3.2 255.255.255.0
+!
+interface Ethernet0/2
+ no ip address
+ shutdown
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+!
+router bgp 500
+ bgp router-id 2.2.2.2
+ bgp log-neighbor-changes
+ network 192.168.2.0 mask 255.255.255.224
+ network 192.168.2.64 mask 255.255.255.192
+ aggregate-address 192.168.1.0 255.255.255.0 as-set summary-only
+ neighbor 10.1.2.1 remote-as 1000
+ neighbor 10.1.2.1 default-originate
+ neighbor 10.2.3.3 remote-as 300
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ login
+ transport input ssh
+!
+!
+!
+!
+end

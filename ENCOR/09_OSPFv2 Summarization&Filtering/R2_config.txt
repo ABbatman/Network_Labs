@@ -1,0 +1,129 @@
+! Sanitized for public publication (no secrets, keys, or certificates)
+
+Building configuration...
+
+Current configuration : 3663 bytes
+!
+!
+!
+version 17.16
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no logging console
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+login on-success log
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 209.165.200.225 255.255.255.224
+!
+interface Ethernet0/0
+ ip address 172.16.0.1 255.255.255.252
+!
+interface Ethernet0/1
+ ip address 172.16.1.1 255.255.255.252
+!
+interface Ethernet0/2
+ no ip address
+ shutdown
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+!
+router ospf 123
+ router-id 2.2.2.1
+ auto-cost reference-bandwidth 1000
+ network 172.16.0.0 0.0.0.3 area 0
+ network 172.16.1.0 0.0.0.3 area 0
+ default-information originate
+ distribute-list OSPF-FILTER in
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+!
+ip route 0.0.0.0 0.0.0.0 Loopback0
+!
+ip access-list standard OSPF-FILTER
+ 10 deny 10.10.20.0 0.0.0.255
+ 20 permit any
+no logging btrace
+!
+!
+!
+control-plane
+!
+!
+banner motd ^C This is R2, OSPFv2 Route Summarization and Filtering Lab ^C
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ login
+ transport input ssh
+!
+!
+!
+!
+end

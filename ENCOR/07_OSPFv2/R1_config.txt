@@ -1,0 +1,131 @@
+! Sanitized for public publication (no secrets, keys, or certificates)
+
+Building configuration...
+
+Current configuration : 3627 bytes
+!
+!
+!
+version 17.16
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no logging console
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+login on-success log
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 209.165.200.225 255.255.255.224
+!
+interface Loopback1
+ ip address 192.168.1.1 255.255.255.192
+ ip ospf network point-to-point
+ ip ospf 123 area 0
+!
+interface Ethernet0/0
+ no ip address
+ shutdown
+!
+interface Ethernet0/1
+ ip address 10.10.0.1 255.255.255.248
+ ip ospf dead-interval 20
+ ip ospf hello-interval 5
+ ip ospf priority 255
+ ip ospf 123 area 0
+!
+interface Ethernet0/2
+ no ip address
+ shutdown
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+!
+router ospf 123
+ router-id 1.1.1.1
+ auto-cost reference-bandwidth 1000
+ passive-interface Loopback1
+ default-information originate
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+!
+ip route 0.0.0.0 0.0.0.0 Loopback0
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ login
+ transport input ssh
+!
+!
+!
+!
+end

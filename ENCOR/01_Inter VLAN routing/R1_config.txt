@@ -1,0 +1,145 @@
+! Sanitized for public publication (no secrets, keys, or certificates)
+
+Building configuration...
+
+Current configuration : 3814 bytes
+!
+!
+!
+version 17.16
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no logging console
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+login on-success log
+ipv6 unicast-routing
+ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ no ip address
+ shutdown
+!
+interface Ethernet0/1
+ ip address 10.1.13.1 255.255.255.0
+ ipv6 address FE80::1:1 link-local
+ ipv6 address 2001:DB8:ACAD:10D1::1/64
+!
+interface Ethernet0/2
+ no ip address
+ shutdown
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+!
+interface Ethernet1/0
+ no ip address
+ shutdown
+!
+interface Ethernet1/1
+ ip address 10.1.3.1 255.255.255.0
+ ipv6 address FE80::1:2 link-local
+ ipv6 address 2001:DB8:ACAD:1013::1/64
+!
+interface Ethernet1/2
+ no ip address
+ shutdown
+!
+interface Ethernet1/3
+ no ip address
+ shutdown
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+!
+ip http server
+ip http secure-server
+ip route 0.0.0.0 0.0.0.0 10.1.3.3
+ip route 10.2.0.0 255.255.0.0 10.1.13.13
+ip ssh bulk-mode 131072
+no logging btrace
+ipv6 route 2001:DB8:ACAD:1050::/64 2001:DB8:ACAD:10D1::D1
+ipv6 route 2001:DB8:ACAD:1060::/64 2001:DB8:ACAD:10D1::D1
+ipv6 route ::/0 2001:DB8:ACAD:1013::3
+!
+!
+!
+control-plane
+!
+!
+banner motd ^C This is R1, Inter-VLAN Routing Lab^C
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ login
+ transport input ssh
+!
+!
+!
+!
+end

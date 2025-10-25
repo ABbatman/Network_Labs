@@ -1,0 +1,99 @@
+! Sanitized for public publication (no secrets, keys, or certificates)
+
+Building configuration...
+
+Current configuration : 3460 bytes
+!
+!
+version 17.16
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname D1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no logging console
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip audit notify log
+ip audit po max-events 100
+no ip domain lookup
+ip cef
+login on-success log
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+interface Ethernet0/0
+!
+interface Ethernet0/1
+ no switchport
+ ip address 10.10.1.1 255.255.255.0
+!
+interface Ethernet0/2
+!
+interface Ethernet0/3
+ no switchport
+ ip address 10.10.0.2 255.255.255.252
+!
+router ospf 123
+ router-id 1.1.1.2
+ auto-cost reference-bandwidth 1000
+ network 10.10.0.0 0.0.0.3 area 1
+ network 10.10.1.0 0.0.0.255 area 1
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+!
+!
+!
+!
+control-plane
+!
+!
+banner motd ^C This is D1, Implement Multi-Area OSPFv2 Lab ^C
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ login
+ transport input ssh
+!
+!
+end

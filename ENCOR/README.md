@@ -1,0 +1,46 @@
+# 🧠 CCNP / CML Labs
+
+> “Mastery is built not on memorization, but on structure, iteration, and precision.”
+
+This repository contains my personal **Cisco Modeling Labs (CML)** projects — practical implementations from the **CCNP ENCOR** and **ENARSI** journey.  
+Each lab is structured, cleaned, and documented.
+
+
+Each folder contains:
+- `*.yaml` — ready-to-import CML topology file  
+- `*_config.txt` — sanitized device configurations  
+- `topology.png` — topology screenshot  
+- `README.md` — description, goals, verification checklist 
+
+## 🔍 How to Use
+
+1. Open **Cisco Modeling Labs** (CML).  
+2. Import the `.yaml` file of the desired lab.  
+3. Boot all nodes and apply sanitized configs from `.txt` files.  
+4. Follow the checklist in the lab’s `README.md` to verify results.  
+5. Observe behavior, analyze convergence, and take notes.
+
+---
+
+## 🧱 Philosophy
+
+These labs are not about reproducing Cisco examples.  
+They’re about **understanding the system logic** — how protocols interact, how design affects reliability, and how small details define scalability.
+
+> “I don’t build configs — I build understanding.”
+
+## 🧾 Notes
+
+- All configurations are **sanitized** for public sharing.  
+- No passwords, keys, or private data are included.  
+- Topologies are designed for educational and demonstration purposes.
+
+---
+
+### 👋 Author
+
+**Anatoli**  
+Routing Specialist 
+[GitHub Profile](https://github.com/ABbatman)
+
+> “Every lab builds the next layer of thinking.”

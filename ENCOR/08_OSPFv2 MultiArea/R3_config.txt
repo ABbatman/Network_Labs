@@ -1,0 +1,118 @@
+! Sanitized for public publication (no secrets, keys, or certificates)
+
+Building configuration...
+
+Current configuration : 3401 bytes
+!
+!
+!
+version 17.16
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname R3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no logging console
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+login on-success log
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ ip address 172.16.1.2 255.255.255.252
+!
+interface Ethernet0/1
+ ip address 10.10.4.1 255.255.255.252
+!
+interface Ethernet0/2
+ no ip address
+ shutdown
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+!
+router ospf 123
+ router-id 3.3.3.1
+ auto-cost reference-bandwidth 1000
+ network 10.10.4.0 0.0.0.3 area 2
+ network 172.16.1.0 0.0.0.3 area 0
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+!
+!
+!
+!
+control-plane
+!
+!
+banner motd ^C This is R3, Implement Multi-Area OSPFv2 Lab ^C
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ login
+ transport input ssh
+!
+!
+!
+!
+end

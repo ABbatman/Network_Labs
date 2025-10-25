@@ -1,0 +1,389 @@
+annotations: []
+smart_annotations: []
+nodes:
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: D1
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -320
+    y: -40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i5
+        label: Ethernet1/0
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i6
+        label: Ethernet1/1
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i7
+        label: Ethernet1/2
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i8
+        label: Ethernet1/3
+        mac_address: null
+        type: physical
+        slot: 7
+      - id: i9
+        label: Ethernet2/0
+        mac_address: null
+        type: physical
+        slot: 8
+      - id: i10
+        label: Ethernet2/1
+        mac_address: null
+        type: physical
+        slot: 9
+      - id: i11
+        label: Ethernet2/2
+        mac_address: null
+        type: physical
+        slot: 10
+      - id: i12
+        label: Ethernet2/3
+        mac_address: null
+        type: physical
+        slot: 11
+      - id: i13
+        label: Ethernet3/0
+        mac_address: null
+        type: physical
+        slot: 12
+      - id: i14
+        label: Ethernet3/1
+        mac_address: null
+        type: physical
+        slot: 13
+      - id: i15
+        label: Ethernet3/2
+        mac_address: null
+        type: physical
+        slot: 14
+      - id: i16
+        label: Ethernet3/3
+        mac_address: null
+        type: physical
+        slot: 15
+      - id: i17
+        label: Ethernet4/0
+        mac_address: null
+        type: physical
+        slot: 16
+      - id: i18
+        label: Ethernet4/1
+        mac_address: null
+        type: physical
+        slot: 17
+      - id: i19
+        label: Ethernet4/2
+        mac_address: null
+        type: physical
+        slot: 18
+      - id: i20
+        label: Ethernet4/3
+        mac_address: null
+        type: physical
+        slot: 19
+      - id: i21
+        label: Ethernet5/0
+        mac_address: null
+        type: physical
+        slot: 20
+      - id: i22
+        label: Ethernet5/1
+        mac_address: null
+        type: physical
+        slot: 21
+      - id: i23
+        label: Ethernet5/2
+        mac_address: null
+        type: physical
+        slot: 22
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: D2
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: 80
+    y: -40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i5
+        label: Ethernet1/0
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i6
+        label: Ethernet1/1
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i7
+        label: Ethernet1/2
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i8
+        label: Ethernet1/3
+        mac_address: null
+        type: physical
+        slot: 7
+      - id: i9
+        label: Ethernet2/0
+        mac_address: null
+        type: physical
+        slot: 8
+      - id: i10
+        label: Ethernet2/1
+        mac_address: null
+        type: physical
+        slot: 9
+      - id: i11
+        label: Ethernet2/2
+        mac_address: null
+        type: physical
+        slot: 10
+      - id: i12
+        label: Ethernet2/3
+        mac_address: null
+        type: physical
+        slot: 11
+      - id: i13
+        label: Ethernet3/0
+        mac_address: null
+        type: physical
+        slot: 12
+      - id: i14
+        label: Ethernet3/1
+        mac_address: null
+        type: physical
+        slot: 13
+      - id: i15
+        label: Ethernet3/2
+        mac_address: null
+        type: physical
+        slot: 14
+      - id: i16
+        label: Ethernet3/3
+        mac_address: null
+        type: physical
+        slot: 15
+      - id: i17
+        label: Ethernet4/0
+        mac_address: null
+        type: physical
+        slot: 16
+      - id: i18
+        label: Ethernet4/1
+        mac_address: null
+        type: physical
+        slot: 17
+      - id: i19
+        label: Ethernet4/2
+        mac_address: null
+        type: physical
+        slot: 18
+      - id: i20
+        label: Ethernet4/3
+        mac_address: null
+        type: physical
+        slot: 19
+      - id: i21
+        label: Ethernet5/0
+        mac_address: null
+        type: physical
+        slot: 20
+      - id: i22
+        label: Ethernet5/1
+        mac_address: null
+        type: physical
+        slot: 21
+      - id: i23
+        label: Ethernet5/2
+        mac_address: null
+        type: physical
+        slot: 22
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: A1
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -120
+    y: 120
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i5
+        label: Ethernet1/0
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i6
+        label: Ethernet1/1
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i7
+        label: Ethernet1/2
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i8
+        label: Ethernet1/3
+        mac_address: null
+        type: physical
+        slot: 7
+      - id: i9
+        label: Ethernet2/0
+        mac_address: null
+        type: physical
+        slot: 8
+      - id: i10
+        label: Ethernet2/1
+        mac_address: null
+        type: physical
+        slot: 9
+      - id: i11
+        label: Ethernet2/2
+        mac_address: null
+        type: physical
+        slot: 10
+links:
+  - id: l0
+    n1: n0
+    n2: n1
+    i1: i2
+    i2: i2
+    conditioning: {}
+    label: D1-Ethernet0/1<->D2-Ethernet0/1
+  - id: l1
+    n1: n0
+    n2: n2
+    i1: i22
+    i2: i5
+    conditioning: {}
+    label: D1-Ethernet5/1<->A1-Ethernet1/0
+  - id: l2
+    n1: n0
+    n2: n2
+    i1: i23
+    i2: i6
+    conditioning: {}
+    label: D1-Ethernet5/2<->A1-Ethernet1/1
+  - id: l3
+    n1: n2
+    n2: n1
+    i1: i10
+    i2: i22
+    conditioning: {}
+    label: A1-Ethernet2/1<->D2-Ethernet5/1
+  - id: l4
+    n1: n2
+    n2: n1
+    i1: i11
+    i2: i23
+    conditioning: {}
+    label: A1-Ethernet2/2<->D2-Ethernet5/2
+lab:
+  description: ''
+  notes: ''
+  title: STP
+  version: 0.3.0

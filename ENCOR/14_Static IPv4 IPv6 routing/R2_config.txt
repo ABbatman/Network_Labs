@@ -1,0 +1,130 @@
+! Sanitized for public publication (no secrets, keys, or certificates)
+
+Building configuration...
+
+Current configuration : 3830 bytes
+!
+!
+!
+version 17.16
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no logging console
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+login on-success log
+ipv6 unicast-routing
+ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 192.168.2.1 255.255.255.224
+ ipv6 address FE80::2:3 link-local
+ ipv6 address 2001:DB8:ACAD:2000::1/64
+!
+interface Ethernet0/0
+ ip address 10.1.2.2 255.255.255.0
+ ipv6 address FE80::2:1 link-local
+ ipv6 address 2001:DB8:ACAD:1012::2/64
+!
+interface Ethernet0/1
+ ip address 10.2.3.2 255.255.255.0
+ ipv6 address FE80::2:2 link-local
+ ipv6 address 2001:DB8:ACAD:1023::2/64
+!
+interface Ethernet0/2
+ no ip address
+ shutdown
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+!
+ip route 192.168.1.0 255.255.255.224 Ethernet0/0 10.1.2.1
+ip route 192.168.3.0 255.255.255.224 Ethernet0/1 10.2.3.3
+no logging btrace
+ipv6 route 2001:DB8:ACAD:1000::/64 Ethernet0/0 FE80::1:1
+ipv6 route 2001:DB8:ACAD:3000::/64 Ethernet0/1 FE80::3:1
+!
+!
+!
+control-plane
+!
+!
+banner motd ^C R2, Investigate Static Routes ^C
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ privilege level 15
+ password cisco123
+ logging synchronous
+ login
+ transport input ssh
+!
+!
+!
+!
+end

@@ -1,0 +1,143 @@
+! Sanitized for public publication (no secrets, keys, or certificates)
+
+
+Building configuration...
+
+Current configuration : 3936 bytes
+!
+!
+!
+version 17.16
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no logging console
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+login on-success log
+ipv6 unicast-routing
+ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 209.165.200.225 255.255.255.224
+ ipv6 address FE80::2:3 link-local
+ ipv6 address 2001:DB8:FEED:209::1/64
+!
+interface Ethernet0/0
+ ip address 172.16.0.1 255.255.255.252
+ ipv6 address FE80::2:1 link-local
+ ipv6 address 2001:DB8:ACAD:A001::1/64
+ ospfv3 network point-to-point
+ ospfv3 123 ipv4 area 0
+ ospfv3 123 ipv6 area 0
+!
+interface Ethernet0/1
+ ip address 172.16.1.1 255.255.255.252
+ ipv6 address FE80::2:2 link-local
+ ipv6 address 2001:DB8:ACAD:A002::1/64
+ ospfv3 network point-to-point
+ ospfv3 123 ipv4 area 0
+ ospfv3 123 ipv6 area 0
+!
+interface Ethernet0/2
+ no ip address
+ shutdown
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+!
+router ospfv3 123
+ !
+ address-family ipv4 unicast
+  default-information originate
+ exit-address-family
+ !
+ address-family ipv6 unicast
+  default-information originate
+  router-id 2.2.2.1
+ exit-address-family
+!
+router ospf 123
+ router-id 2.2.2.1
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+!
+ipv6 route ::/0 Loopback0
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ login
+ transport input ssh
+!
+!
+!
+!
+end

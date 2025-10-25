@@ -1,0 +1,115 @@
+! Sanitized for public publication (no secrets, keys, or certificates)
+
+Building configuration...
+
+Current configuration : 3731 bytes
+!
+!
+!
+version 17.16
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname D2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no logging console
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip audit notify log
+ip audit po max-events 100
+no ip domain lookup
+ip cef
+login on-success log
+ipv6 unicast-routing
+ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+interface Ethernet0/0
+!
+interface Ethernet0/1
+!
+interface Ethernet0/2
+ no switchport
+ ip address 10.10.4.2 255.255.255.252
+ ipv6 address FE80::D2:2 link-local
+ ipv6 address 2001:DB8:ACAD:2001::2/64
+ ospfv3 123 ipv4 area 2
+ ospfv3 123 ipv6 area 2
+!
+interface Ethernet0/3
+ no switchport
+ ip address 10.10.5.1 255.255.255.0
+ ipv6 address FE80::D2:1 link-local
+ ipv6 address 2001:DB8:ACAD:2002::1/64
+ ospfv3 123 ipv6 area 2
+ ospfv3 123 ipv4 area 2
+!
+router ospfv3 123
+ !
+ address-family ipv4 unicast
+  passive-interface Ethernet0/3
+  router-id 3.3.3.2
+ exit-address-family
+ !
+ address-family ipv6 unicast
+  passive-interface Ethernet0/3
+ exit-address-family
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+!
+!
+no logging btrace
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ login
+ transport input ssh
+!
+!
+end
