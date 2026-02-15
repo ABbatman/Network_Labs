@@ -13,9 +13,7 @@ Each folder contains:
 
 1. Open **Cisco Modeling Labs** (CML).  
 2. Import the `.yaml` file of the desired lab.  
-3. Boot all nodes and apply sanitized configs from `.txt` files.  
-4. Follow the checklist in the lab’s `README.md` to verify results.  
-5. Observe behavior, analyze convergence, and take notes.
+3. Boot all nodes and apply configs from `.txt` files.  
 
 ---
 
