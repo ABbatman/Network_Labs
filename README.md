@@ -22,12 +22,6 @@ Each folder contains:
 
 ---
 
-## 🧱 Philosophy
-
-These labs are not about reproducing Cisco examples.  
-They’re about **understanding the system logic** — how protocols interact, how design affects reliability, and how small details define scalability.
-
-> “I don’t build configs — I build understanding.”
 
 ## 🧾 Notes
 
