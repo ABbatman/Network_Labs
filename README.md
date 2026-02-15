@@ -31,7 +31,6 @@ Each folder contains:
 ### 👋 Author
 
 **Anatoli**  
-Routing Specialist 
+
 [GitHub Profile](https://github.com/ABbatman)
 
-> “Every lab builds the next layer of thinking.”
