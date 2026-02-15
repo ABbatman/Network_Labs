@@ -1,7 +1,5 @@
 # 🧠 CCNP / CML Labs
 
-> “Mastery is built not on memorization, but on structure, iteration, and precision.”
-
 This repository contains my personal **Cisco Modeling Labs (CML)** projects — practical implementations from the **CCNP ENCOR** and **ENARSI** journey.  
 Each lab is structured, cleaned, and documented.
 
