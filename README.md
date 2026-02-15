@@ -1,7 +1,6 @@
 # 🧠 CCNP / CML Labs
 
 This repository contains my personal **Cisco Modeling Labs (CML)** projects — practical implementations from the **CCNP ENCOR** and **ENARSI** journey.  
-Each lab is structured, cleaned, and documented.
 
 
 Each folder contains:
